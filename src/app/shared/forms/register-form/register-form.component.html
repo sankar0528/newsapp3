@@ -1,0 +1,27 @@
+<h2 class="title is-2" id="registrationForm">Register</h2>
+<form
+    [formGroup]="formData"
+    (submit)="formSubmit.emit(formData.value)"
+    class="form">
+    <div class="field">
+        <input
+            formControlName="username"
+            type="text"
+            name="username"
+            placeholder="Your name..."
+            class="input is-primary is-small">
+    </div>
+    <div class="field">
+        <input formControlName="password"
+            type="password"
+            name="password"
+            placeholder="Your password..."
+            class="input is-primary is-small">
+    </div>
+    <div class="field">
+        <button
+            type="submit"
+            class="button is-primary is-small"
+            [disabled]="!formData.valid">Inscription</button>
+    </div>
+</form>

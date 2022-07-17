@@ -1,0 +1,24 @@
+<h2 class="title is-2">Start a search</h2>
+<form [formGroup]="formData"
+    (submit)="getNewsFromSource(formData.value)"
+    class="form">
+    <div class="field">
+        <div class="select is-primary is-fullwidth is-small">
+            <select formControlName="source">
+                <option value="null">Select a source</option>
+                <option *ngFor="let source of sourcesCollection" [value]="source.id">{{ source.name }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="field">
+        <input formControlName="keyword"
+            type="text"
+            placeholder="Any keyword ?"
+            class="input is-primary is-small">
+    </div>
+    <div class="field">
+        <button type="submit"
+            class="button is-primary is-small"
+            [disabled]="!formData.valid">Search</button>
+    </div>
+</form>

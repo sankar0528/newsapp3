@@ -1,0 +1,17 @@
+<section
+    class="section"
+    *ngIf="userData !== null">
+    <p class="title is-1">Welcome back, {{ userData.firstname | titlecase }}!</p>
+</section>
+
+<section class="section">
+    <app-news-source-selector [bookmarks]="bookmarks"></app-news-source-selector>
+</section>
+
+<app-news-source (addBookmark)="addBookmark($event)"></app-news-source>
+
+<section class="section">
+    <article *ngFor="let newsItem of newsCollection">
+        <app-news-article [news]="newsItem"></app-news-article>
+    </article>
+</section>

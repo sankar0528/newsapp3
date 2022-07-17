@@ -1,0 +1,9 @@
+<section *ngIf="bookmarks" class="section">
+    <article *ngFor="let singleBookmark of bookmarks"
+        class="is-small">
+        <app-single-bookmark [bookmark]="singleBookmark"></app-single-bookmark>
+    </article>
+</section>
+<section *ngIf="bookmarks.length == 0" class="section">
+    <p>You haven't bookmarked any news sources yet... Do it from the news page :)</p>
+</section>

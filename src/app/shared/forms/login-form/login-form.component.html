@@ -1,0 +1,42 @@
+<h2 class="title is-2">Log In</h2>
+<form
+    [formGroup]="formData"
+    (submit)="formSubmit.emit(formData.value)"
+    class="form">
+    <div class="field">
+        <input
+            formControlName="username"
+            type="text"
+            name="username"
+            required
+            minlength="3"
+            placeholder="Your username..."
+            class="input is-primary is-small">
+    </div>
+    <div class="field">
+        <input
+            formControlName="password"
+            type="password"
+            name="password"
+            required
+            minlength="5"
+            placeholder="Your password..."
+            class="input is-primary is-small">
+    </div>
+    <div class="field level">
+        <div class="level-left">
+            <div class="level-item">
+                <button
+                    [disabled]="!formData.valid"
+                    type="submit"
+                    class="button is-primary is-small">OK</button>
+            </div>
+            <div class="level-item">
+                <a
+                    href="#registrationForm"
+                    role="button"
+                    (click)="notRegistered.emit()">Not registered yet?</a>
+            </div>
+        </div>
+    </div>
+</form>

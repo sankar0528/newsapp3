@@ -1,0 +1,71 @@
+// ----- COLORS -----
+// custom colors
+$ming: hsl(190%, 69%, 28%); // petrol blue
+$ming-dark: hsl(190%, 69%, 14%); // dark petrol blue
+$ming-light: hsl(190%, 69%, 28%, .85); // light petrol blue
+
+$gunmetal: hsl(231%, 12%, 55%); // dark grey
+$dark-gunmetal: hsl(231%, 12%, 21%); // darker grey
+$red: hsl(352%, 76%, 43%); // red
+
+$custom-colors: (
+    'primary-light': $ming-light,
+    'dark-lighter': $gunmetal
+);
+
+// redefine some of Bulma's colors
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-dark: $gunmetal;
+$grey-darker: $dark-gunmetal;
+
+// theme colors
+$primary: $ming;
+$link: $ming-dark;
+$danger: $red;
+
+
+// ----- ELEMENTS COLORS -----
+// global text
+$text: $grey-darker;
+
+// navbar
+$navbar-item-color: $primary;
+
+// inputs
+$input-border-color: transparent;
+$input-shadow: none;
+
+// tags
+$tag-background-color: $grey-lighter;
+$input-placeholder-color: $grey-dark;
+
+// message (bookmark)
+$message-header-background-color: $ming-light;
+
+// global radius
+$radius: 0;
+
+
+// ----- FONT -----
+$family-sans-serif: "Nunito", sans-serif;
+
+
+// ----- IMPORTS -----
+@import "../node_modules/bulma/bulma.sass";
+@import '~bulma-switch';
+
+
+// ----- GLOBAL STYLES -----
+@media screen and (min-width:769px){
+    .section {
+        padding: 1.5rem 3rem;
+    }
+}
+
+.section {
+    padding: 1.5rem;
+}
+
+.button, .button.is-small {
+    border-radius: 0;
+}
